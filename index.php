@@ -18,6 +18,7 @@ var_dump($test[6]);
     <title>Document</title>
 </head>
 <body>
+    <h1>TABLA PIXELS</h1>
         <table>
 
             <?php 
@@ -30,8 +31,6 @@ var_dump($test[6]);
                 }
                 echo "</tr>";
             };
-
-          
             ?>
         
     </table>
