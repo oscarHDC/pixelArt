@@ -6,7 +6,7 @@ $client = new SoapClient(NULL, $options);
 //Obtenemos pixels
 $pixels = $client->getPixels();
 
-//Enviamos array
+
 
 
 
