@@ -6,6 +6,7 @@ $client = new SoapClient(NULL, $options);
 
 $test = $client->getPixels();
 var_dump($test[6]);
+//a
 
 ?>
 
