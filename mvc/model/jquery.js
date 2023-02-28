@@ -19,7 +19,7 @@ function crearTabla(json) {
 
       $(document).on("ready", function () {
         $(inputColor).change(function () {
-          var url = "index.php";
+          var url = "/mvc/view/index.php";
           $.ajax({
             type: "POST",
             url: url,
