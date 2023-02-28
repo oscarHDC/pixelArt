@@ -1,9 +1,7 @@
-
 //FUNCION PARA CREAR EL TABLERO
 function crearTabla(json) {
   let perchaTabla = document.createDocumentFragment();
   let tabla = document.createElement("table");
-  /* let columna = 0; */
   let tr;
   let arrayPos = 0;
   for (let c = 0; c < 32; c++) {
@@ -19,7 +17,7 @@ function crearTabla(json) {
 
       $(document).on("ready", function () {
         $(inputColor).change(function () {
-          var url = "/mvc/view/index.php";
+          var url = "/pixelArt/mvc/view/index.php";
           $.ajax({
             type: "POST",
             url: url,
@@ -28,8 +26,7 @@ function crearTabla(json) {
               x: inputColor.name.split(" ")[0],
               y: inputColor.name.split(" ")[1],
             },
-            success: function (data) {
-            },
+            success: function (data) {},
           });
         });
       });
@@ -49,7 +46,12 @@ function crearTabla(json) {
   let div = document.getElementById("tablaCont").append(perchaTabla);
 }
 
+crearTabla(jArray);
 
 //Refrescar tablon
-const interval = setInterval(crearTabla(jArray), 5000);
+const interval = setInterval(() => {
+  crearTabla(jArray);
+  console.log("OLAOLA");
+}, 5000);
+
 //crearTabla(jArray);

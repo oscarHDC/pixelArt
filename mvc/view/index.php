@@ -31,6 +31,6 @@ if(isset($_POST["color"])){
 
 
 </script>
-<script type="text/javascript" src="/mvc/model/jquery.js"></script>
+<script type="text/javascript" src="../model/jquery.js"></script>
 </html>
 
