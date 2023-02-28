@@ -1,3 +1,5 @@
+
+//FUNCION PARA CREAR EL TABLERO
 function crearTabla(json) {
   let perchaTabla = document.createDocumentFragment();
   let tabla = document.createElement("table");
@@ -7,6 +9,7 @@ function crearTabla(json) {
   for (let c = 0; c < 32; c++) {
     tr = document.createElement("tr");
     for (let f = 0; f < 32; f++) {
+      //ELEMENTOS HTML PARA DESPLEGAR EN EL INDEX
       let color = json[arrayPos][2];
       let td = document.createElement("td");
       let inputColor = document.createElement("input");
@@ -25,14 +28,13 @@ function crearTabla(json) {
               x: inputColor.name.split(" ")[0],
               y: inputColor.name.split(" ")[1],
             },
-
             success: function (data) {
-              //console.log(inputColor.name.split(" ")[0]);
             },
           });
         });
       });
 
+      //HACEMOS APEND DEL INPUT A LA TABLA
       td.append(inputColor);
       tr.append(td);
       tabla.append(tr);
@@ -41,49 +43,13 @@ function crearTabla(json) {
     arrayPos += -32 * 32;
     arrayPos++;
   }
+
+  //AÑADIMOS LA TABLA AL CONTENEDOR DE LA TABLA
   perchaTabla.append(tabla);
   let div = document.getElementById("tablaCont").append(perchaTabla);
 }
 
-/* $(document).on("ready", function () {
-  $("#btn").click(function () {
-    var url = "index.php";
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: { color: "ola", contrasena: "adios" },
-      success: function (data) {
-        //  $("#resultado").html("ola");
-      },
-    });
-  });
-}); */
 
-/* $(document).ready(function (e) {
-    e.preventDefault();
-    $.ajax({
-        type: "post",
-        url: "index.php",
-        data: $(this).serialize(),
-        success: function (response) {
-                const arr = JSON.parse(response);
-                crearTabla(arr);
-            }
-        });
-    }); */
-/* 
-    $.ajax({
-        type: 'POST',
-        dataType: "json",
-        url:'index.php',
-        data: $(this).serialize(),
-        success: function(data)
-        {
-         data = JSON.parse(data);
-          crearTabla(data)
-        }
-      });
- */
-
+//Refrescar tablon
 const interval = setInterval(crearTabla(jArray), 5000);
 //crearTabla(jArray);
