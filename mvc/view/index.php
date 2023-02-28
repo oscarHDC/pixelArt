@@ -6,6 +6,15 @@ $client = new SoapClient(NULL, $options);
 //OBTENEMOS PIXELES
 $pixels = $client->getPixels();
 
+
+
+
+
+
+
+
+
+
 //SI RECIBIMOS EL POST CON LAS COORDENADAS Y EL COLOR DEL INPUT HACEMOS UPDATE 
 if(isset($_POST["color"])){
     $client->updateColor($_POST["y"], $_POST["x"], $_POST["color"]);

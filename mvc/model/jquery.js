@@ -46,6 +46,10 @@ function crearTabla(json) {
   let div = document.getElementById("tablaCont").append(perchaTabla);
 }
 
+setTimeout(function () {
+  window.location.reload(1);
+}, 8000);
+
 crearTabla(jArray);
 
 //Refrescar tablon
