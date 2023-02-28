@@ -1,18 +1,14 @@
 <?php
+ 
+ //Añadimos config
+ require '../../config/config.php';
+ 
 //CONECATAMOS EL SOAP
-$options = array('uri' => 'http://s936421440.mialojamiento.es/', 'location' => 'http://s936421440.mialojamiento.es/index.php');
+$options = array('uri' => HOST, 'location' => LOCATION);
 $client = new SoapClient(NULL, $options);
 
 //OBTENEMOS PIXELES
 $pixels = $client->getPixels();
-
-
-
-
-
-
-
-
 
 
 //SI RECIBIMOS EL POST CON LAS COORDENADAS Y EL COLOR DEL INPUT HACEMOS UPDATE 
