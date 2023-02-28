@@ -1,7 +1,7 @@
 <?php
 
-require '../view/View.php';
+require './mvc/view/View.php';
 $vistaPrincipal = new View();
-$vistaPrincipal->loadView('../../media/html/mainPage.html');
+$vistaPrincipal->loadView('./media/html/mainPage.html');
 
 echo $vistaPrincipal->returnView();
